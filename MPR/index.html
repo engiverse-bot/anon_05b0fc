@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Login & Sign up Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Add this CSS to hide the register form by default */
+        .hidden {
+            display: none;
+        }
+
+        .form-box {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo"> <img src="Logo.jpg" height="70px"> </h2>
+        <nav class="navigation">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <button class="register-popup">REGISTER</button>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <!-- Login Form -->
+        <div class="form-box login">
+            <h2>LOGIN</h2>
+            <form id="login-form" action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" id="login-email" required> <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" id="login-password" required> <label>Password</label>
+                </div>
+                <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">LOGIN</button>
+                <div class="register">
+                    <p class="text">Don't have an Account?
+                        <a href="#" class="register-link">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Register Form (initially hidden) -->
+        <div class="form-box register hidden">
+            <h2>REGISTRATION</h2>
+            <form id="register-form" action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" id="register-email" required> <label>Email</label> 
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon>
+                    </span>
+                    <input type="password" id="register-password" required> <label>Password</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="calendar"></ion-icon>
+                    </span>
+                    <input type="number" id="register-age" required min="1" max="120"> <label>Age</label>
+                </div>
+                <div class="forgot">
+                    <input type="checkbox" required> <a href="#">Agree to terms & Conditions</a>
+                </div>
+                <button type="submit" class="btn">REGISTER</button>
+                <div class="login">
+                    <p class="text">Already have an Account?
+                        <a href="#" class="login-link">Login</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- About Modal -->
+<div id="about-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h1>About Our Website</h1>
+        <p id="in">Welcome to our website! Here you can find the latest news and updates. 
+            Our goal is to provide you innovative news website,Aimed at delivering age-appropriate news content in a safe and engaging manner,the constant barrage of news can be overwhelming, 
+             especially for younger audiences. Providing age-appropriate news content is crucial for protecting young audiences from exposure to potentially harmful or inappropriate information, ensuring their safety and well-being.
+            </p>
+
+        <p>Thank you for visiting!</p>
+    </div>
+</div>
+<!-- Contact Modal -->
+<div id="contact-modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-button-contact">&times;</span>
+        <h1>Contact Us</h1>
+        <p id="detail">Email: pulsenews69@gmail.com</p>
+        <p id="detail">Phone: +91 8788399380</p>
+        <p id="detail">Address: 123 News Street, Media City</p>
+    </div>
+</div>
+
+    <!-- Link to index.js -->
+    <script src="index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

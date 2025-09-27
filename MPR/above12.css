@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root {
+  --primary-bg: #ADB5BD; /* Light grey for body background */
+  --secondary-bg: whitesmoke; /* White for card backgrounds */
+  --primary-text: #1a1a1a; /* Dark text */
+  --secondary-text: #666666; /* Medium grey for secondary text */
+  --accent-color: #e63946; /* Accent color */
+  --border-color: #ADB5BD; /* Light grey for borders */
+  --header-bg: #1a1a1a; /* Dark background for header */
+  --header-text: #ffffff; /* White text in header */
+  --card-bg: whitesmoke; /* White for cards */
+  --hover-bg: #f1f3f5; /* Light grey for hover */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  color: var(--primary-text);
+  background-color: var(--primary-bg);
+  line-height: 1.6;
+  
+}
+
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-text);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color);
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  width: 100%;
+  background-color: var(--header-bg);
+  padding: 15px 50px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  color: var(--header-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--header-text);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.nav ul li {
+  list-style: none;
+  position: relative;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: var(--header-text);
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav ul li a:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* Headlines section with fixed height */
+.topheadlines {
+  padding: 100px 50px 50px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 900px; /* Fixed height */
+
+}
+
+/* Left section */
+.topheadlines .left {
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow-y: auto; /* Enable scrolling */
+}
+
+.topheadlines .left > .title {
+  font-size: 24px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 15px;
+  position: sticky;
+  top: 0;
+  background-color: var(--card-bg);
+  z-index: 1;
+}
+
+.topheadlines .left .img {
+  width: 100%;
+  height: 380px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.topheadlines .left .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.topheadlines .left:hover .img img {
+  transform: scale(1.05);
+}
+
+.topheadlines .left .text {
+  padding: 5px;
+}
+
+.topheadlines .left .text .title a {
+  text-decoration: none;
+}
+
+.topheadlines .left .text .title a h2 {
+  font-size: 22px;
+  color: var(--primary-text);
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.topheadlines .left .text .title a h2:hover {
+  color: var(--accent-color);
+}
+
+.topheadlines .left .text .description {
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.6;
+}
+
+/* Right section */
+.topheadlines .right {
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Enable scrolling */
+  /* backdrop-filter: blur(100px);
+  background: transparent; */
+}
+
+.topheadlines .right > .title {
+  font-size: 20px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--primary-text);
+  margin-bottom: 15px;
+  position: sticky;
+  top: 0;
+  background-color: var(--card-bg);
+  z-index: 1;
+}
+
+.topheadlines .right .topNews {
+  padding: 12px;
+  flex-grow: 1;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow-y: auto; /* Enable scrolling */
+}
+
+.topheadlines .right .topNews .news {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.4s ease;
+  border-radius: 6px;
+}
+
+.topheadlines .right .topNews .news:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.topheadlines .right .topNews .news:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(8px);
+}
+
+.topheadlines .right .topNews .news .img {
+  width: 140px;
+  height: 100px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.topheadlines .right .topNews .news .text .title a{
+  text-decoration: none;
+}
+.topheadlines .right .topNews .news .text .title a{
+  color: #000;
+}
+.topheadlines .right .topNews .news .text .title a p:hover{
+  color: black; 
+  text-decoration: underline;
+} 
+
+.topheadlines .right .topNews .news .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.topheadlines .right .topNews .news:hover .img img {
+  transform: scale(1.1);
+}
+
+/* Page 2 styling with enhanced animations */
+
+/* Add these new styles while keeping all your existing CSS */
+/* Add these new styles while keeping all your existing CSS */
+.newsBox {
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  scroll-behavior: smooth;
+}
+
+.newsBox .newsCard {
+  transition: transform 0.5s ease-out;
+}
+
+/* Hide scrollbar but keep functionality */
+.newsBox::-webkit-scrollbar {
+  display: none;
+}
+
+.newsBox {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure smooth movement */
+.newsCard {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.page2 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  padding: 50px;
+}
+
+.page2 .news {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border-color);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* .news .title h2 {
+  font-size: 1.5em;
+  color: #004466;
+  margin-bottom: 1em;
+} */
+.page2 .news:last-child {
+  border-bottom: none;
+}
+
+.page2 .news > .title h2 {
+  font-size: 28px;
+  color: var(--primary-text);
+  transition: color 0.3s ease;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: inline;
+}
+
+.page2 .news > .title h2:hover {
+  color: var(--accent-color);
+}
+
+.page2 .news .newsBox {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.page2 .news .newsBox .newsCard {
+  min-width: calc(20% - 16px);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.page2 .news .newsBox .newsCard:hover {
+  transform: translateY(-4px);
+}
+
+.page2 .news .newsBox .newsCard .img {
+  height: 140px;
+  overflow: hidden;
+}
+
+.page2 .news .newsBox .newsCard .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.page2 .news .newsBox .newsCard:hover .img img {
+  transform: scale(1.05);
+}
+
+.page2 .news .newsBox .newsCard .text {
+  padding: 10px;
+}
+
+.page2 .news .newsBox .newsCard .text .title a{
+  text-decoration: none;
+}
+/* .page2 .news .newsBox .newsCard .text .title a{
+  text-decoration: none;
+} */
+.page2 .news .newsBox .newsCard .text .title a p:hover{
+  text-decoration: underline;
+  color: black;
+}
+
+.page2 .news .newsBox .newsCard .text h3 {
+  font-size: 18px;
+  color: var(--primary-text);
+  transition: color 0.3s ease;
+}
+
+.page2 .news .newsBox .newsCard .text h3:hover {
+  color: var(--accent-color);
+}
+
+.page2 .news .newsBox .newsCard .text p {
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.footer {
+    width: 100%;
+    padding: 50px 50px 0px;
+    background-color: #0a0a18;
+    min-height: 300px;
+    color: white;
+  }
+  
+  .footer .box {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Changed to three columns */
+    gap: 20px; /* Added gap between columns */
+    justify-content: space-evenly;
+  }
+  
+  .footer .box .left {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+  
+  .footer .box .left .categories > p {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .footer .box .left .categories div {
+    margin-bottom: 15px;
+    width: max-content;
+  }
+  
+  .footer .box .left .categories div p {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+    border-left: 1px solid #fff0;
+    border-right: 1px solid #fff0;
+    transition: 0.3s;
+  }
+  
+  .footer .box .left .categories div p:hover {
+    color: #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
+  
+  .footer .box .right .contactUs .contact div p {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 0 10px;
+    border-left: 1px solid #fff0;
+    border-right: 1px solid #fff0;
+    transition: 0.3s;
+  }
+  
+  /* .footer .contact {
+    margin-left: 10px;
+  } */
+  
+  .footer .contact p {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .footer .contact div {
+    font-size: 21px;
+    margin-bottom: 15px;
+    color: whitesmoke;
+  }
+  
+  .footer .contact div:hover {  /* Fixed selector */
+    transform: translate(5px, -5px); /* Fixed translate property */
+    font-size: 25px;
+  }
+  
+  .footer .feedbackform p {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .footer .feedbackform .feedback {
+    display: flex;
+    width: 480px;
+  }
+  
+  .footer .feedbackform .feedback input {
+    width: 100%; /* Changed from fixed width to be responsive */
+    max-width: 600px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  
+  .footer .feedbackform .feedback button {
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
+  
+  .footer .feedbackform .feedback button:hover {
+    color: #0a0a18;
+    background-color: #fff;
+  }
+
+.footer .copyrights{
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  letter-spacing: 1px;
+}
